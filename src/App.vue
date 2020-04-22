@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <header class="w-100">
+      <TopNav class="mb-5"/>
+    </header>
+    <v-content>
+      <router-view/>
+      <SideBar/>
+    </v-content>
+    <footer class="w-100" style="background-color: #3a434b;">
+      <!-- <Footer class="mt-5"/> -->
+      <div class="footer-copyright text-center py-3">
+        © 2020 Copyright: <a href="#">EOS Game Store</a>
+      </div>
+    </footer>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TopNav from '@/components/TopNav'
+import SideBar from '@/components/SideBar'
+import Footer from '@/components/Footer'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TopNav,
+    SideBar,
+    Footer
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
